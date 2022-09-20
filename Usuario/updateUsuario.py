@@ -17,6 +17,7 @@ def update(mydb, ObjectId):
             ''')
         
         opcao = input("\nEscolha o que deseja atualizar: ")
+        
         match opcao:
             case "1":
                 nome = input(str("Digite seu novo nome: "))

@@ -1,3 +1,5 @@
+from bson.objectid import ObjectId
+
 def findAll(mydb):
     mycol = mydb.produtos
     print('\n')
@@ -12,19 +14,19 @@ def findAll(mydb):
         print("\n----------------------------------------\n")
 
 
-def findById(mydb,ObjectId):
+def findById(mydb):
     mycol = mydb.produtos
     findAll(mydb)
     id = input(str("\nEscolha o id de um produto: "))
-    for x in mycol.find({"_id":ObjectId(id)}):
-        print(f'\n--  Produto de id {id}  --\n')
-        print(f'Nome: {x["nome"]}')
-        print(f'Descrição: {x["descricao"]}')
-        print(f'Preço: {x["preco"]}')
-        print(f'Quantidade em estoque: {x["quantidade"]}')
-        print(f'Data de Postagem: {x["data_postagem"]}')
-        print("\n----------------------------------------\n")
-
+    produto = mycol.find_one({"_id":ObjectId(id)})
+    print(f'\n--  Produto de id {id}  --\n')
+    print(f'Nome: {produto["nome"]}')
+    print(f'Descrição: {produto["descricao"]}')
+    print(f'Preço: {produto["preco"]}')
+    print(f'Quantidade em estoque: {produto["quantidade"]}')
+    print(f'Data de Postagem: {produto["data_postagem"]}')
+    print("\n----------------------------------------\n")
+    return produto
 
 def findSort(mydb):
     mycol = mydb.produtos

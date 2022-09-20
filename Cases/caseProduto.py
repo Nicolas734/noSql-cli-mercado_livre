@@ -1,7 +1,6 @@
 import Produto.createProduto as createProduto
 import Produto.findProduto as findProduto
 import Produto.deleteProduto as deleteProduto
-from bson.objectid import ObjectId
 
 def caseProd(mydb):
     
@@ -27,10 +26,10 @@ def caseProd(mydb):
             case "3":
                 findProduto.findSort(mydb)
             case "4":
-                findProduto.findById(mydb,ObjectId)
+                findProduto.findById(mydb)
             case "5":
                 print('futurameete será feito')
             case "6":
-                deleteProduto.deleteProduto(mydb,ObjectId)
+                deleteProduto.deleteProduto(mydb)
             case "0":
                 return

@@ -1,6 +1,7 @@
 import Produto.findProduto as findProduto
+from bson.objectid import ObjectId
 
-def deleteProduto(mydb,ObjectId):
+def deleteProduto(mydb):
     mycol = mydb.produtos
     findProduto.findAll(mydb)
     id = input(str("Por favor digite o Id do produto que deseja excluir: "))

@@ -14,7 +14,8 @@ def cadastrarVendedor(mydb):
         "cnpj": cnpj,
         "email": email,
         "telefone": telefone,
-        "enderecos":enderecos
+        "enderecos":enderecos,
+        "produtos":[]
     }
     
     x = mycol.insert_one(mydict)

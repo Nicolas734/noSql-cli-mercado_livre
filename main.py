@@ -2,6 +2,7 @@ import pymongo
 import Cases.caseUsuario as usuario
 import Cases.caseProduto as produto
 import Cases.caseVendedor as vendedor
+import Designar.designar as designar
 
 
 client = pymongo.MongoClient("mongodb+srv://Nicolas:senha@nicolas.yt3g1l9.mongodb.net/?retryWrites=true&w=majority")
@@ -16,6 +17,7 @@ while execucao:
         [1] Usuario
         [2] Produto
         [3] Vendedor
+        [4] Designar
         [0] Sair
         ''')
 
@@ -28,6 +30,8 @@ while execucao:
             produto.caseProd(mydb)
         case "3":
             vendedor.caseVendedor(mydb)
+        case "4":
+            designar.designar(mydb)
         case "0":
             execucao = False
             print("\nAté mais \n")

@@ -1,6 +1,6 @@
 import Vendedor.createVendedor as cadastrar
 import Vendedor.findVendedor as buscar
-from bson.objectid import ObjectId
+import Vendedor.deleteVendedor as excluir
 
 def caseVendedor(mydb):
     
@@ -27,10 +27,10 @@ def caseVendedor(mydb):
             case "3":
                 buscar.findSort(mydb)
             case "4":
-                buscar.findById(mydb,ObjectId)
+                buscar.findById(mydb)
             case "5":
-                print('futurameete será feito')
+                print('futuramente será feito')
             case "6":
-                print('futurameete será feito')
+                excluir.deleteVendedor(mydb)
             case "0":
                 return
