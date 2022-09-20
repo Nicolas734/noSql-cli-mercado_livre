@@ -1,6 +1,7 @@
 import pymongo
-import Produto.create as createProduto
-import Cases.caseUsuario as caseUsuario
+import Cases.caseUsuario as usuario
+import Cases.caseProduto as produto
+import Cases.caseVendedor as vendedor
 
 
 client = pymongo.MongoClient("mongodb+srv://Nicolas:senha@nicolas.yt3g1l9.mongodb.net/?retryWrites=true&w=majority")
@@ -13,17 +14,20 @@ while execucao:
 
     print('''\nOpções: \n
         [1] Usuario
-        [2] Cadastrar Produto
+        [2] Produto
+        [3] Vendedor
         [0] Sair
         ''')
 
-    opcoes = input(str("Escolha uma das opções:"))
+    opcoes = input(str("Escolha uma das opções: "))
 
     match opcoes:
         case "1":
-            caseUsuario.caseUse(mydb)
+            usuario.caseUse(mydb)
         case "2":
-            createProduto.insertProduto(mydb)
+            produto.caseProd(mydb)
+        case "3":
+            vendedor.caseVendedor(mydb)
         case "0":
             execucao = False
             print("\nAté mais \n")

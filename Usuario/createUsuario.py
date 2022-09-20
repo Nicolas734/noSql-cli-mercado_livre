@@ -1,12 +1,12 @@
 def cadastrarUsuario(mydb):
 
     print("Cadastro do Usuario \n")
-    nome = input(str("Nome: "))
-    email = input(str("Email: "))
-    telefone = input(str("Telefone: "))
-    cpf = input(str("CPF: "))
-    rg = input(str("RG: "))
-    nascimento = input(str("Data de Nascimento: "))
+    nome = input(str("Digite seu nome: "))
+    email = input(str("Digite seu email: "))
+    telefone = input(str("Digite seu telefone: "))
+    cpf = input(str("Digite seu CPF: "))
+    rg = input(str("Digite seu RG: "))
+    nascimento = input(str("Digite sua Data de Nascimento: "))
     print('\n')
 
     enderecos = cadastrarEndereco()
@@ -24,7 +24,7 @@ def cadastrarUsuario(mydb):
         "compras":[]
     }
     x = mycol.insert_one(mydict)
-    print("\nUsuario cadastro com sucesso")
+    print("\nUsuario cadastrado com sucesso")
     print(f'Id do usuario cadastrado {x.inserted_id}')
 
 

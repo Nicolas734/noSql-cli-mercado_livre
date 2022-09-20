@@ -1,7 +1,7 @@
-import Usuario.create as create
-import Usuario.find as find
-import Usuario.update as update
-import Usuario.delete as delete
+import Usuario.createUsuario as createUsuario
+import Usuario.findUsuario as findUsuario
+import Usuario.updateUsuario as updateUsuario
+import Usuario.deleteUsuario as deleteUsuario
 from bson.objectid import ObjectId
 
 def caseUse(mydb):
@@ -15,27 +15,23 @@ def caseUse(mydb):
         [4] Buscar usuario por id
         [5] Atualizar usuario
         [6] Excluir usuario
-        [7] Parar Programa
         [0] Voltar ao Menu
         ''')
         
-        opcoes = input(str("Escolha uma das opções:"))
+        opcoes = input(str("Escolha uma das opções: "))
         
         match opcoes:
             case "1":
-                create.cadastrarUsuario(mydb)
+                createUsuario.cadastrarUsuario(mydb)
             case "2":
-                find.findAll(mydb)
+                findUsuario.findAll(mydb)
             case "3":
-                find.findSort(mydb)
+                findUsuario.findSort(mydb)
             case "4":
-                find.findById(mydb,ObjectId)
+                findUsuario.findById(mydb,ObjectId)
             case "5":
-                update.update(mydb,ObjectId)
+                updateUsuario.update(mydb,ObjectId)
             case "6":
-                delete.deletar(mydb,ObjectId)
-            case "7":
-                print("\nAté mais \n")
-                break
+                deleteUsuario.deletar(mydb,ObjectId)
             case "0":
                 return
