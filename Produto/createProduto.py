@@ -21,5 +21,5 @@ def insertProduto(mydb):
     }
 
     x = mycol.insert_one(mydict)
-    print("\nProduto cadastrado com sucesso")
-    print(f'Id do produto cadastrado {x.inserted_id}')
+    print("\nProduto cadastrado com sucesso\n")
+    print(f'Id do produto cadastrado {x.inserted_id}\n')

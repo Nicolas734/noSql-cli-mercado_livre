@@ -1,6 +1,7 @@
 import Produto.createProduto as createProduto
 import Produto.findProduto as findProduto
 import Produto.deleteProduto as deleteProduto
+import Produto.updateProduto as atualizar_produto
 
 def caseProd(mydb):
     
@@ -28,7 +29,7 @@ def caseProd(mydb):
             case "4":
                 findProduto.findById(mydb)
             case "5":
-                print('futurameete será feito')
+                atualizar_produto.atualizarProduto(mydb)
             case "6":
                 deleteProduto.deleteProduto(mydb)
             case "0":

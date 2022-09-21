@@ -1,6 +1,7 @@
 import Usuario.findUsuario as findUsuario
+from bson.objectid import ObjectId
 
-def deletar(mydb,ObjectId):
+def deletar(mydb):
     findUsuario.findAll(mydb)
     id = input(str("Por favor digite o Id do usuario que deseja excluir: "))
     mycol = mydb.usuarios

@@ -1,6 +1,7 @@
 import Usuario.findUsuario as findUsuario
+from bson.objectid import ObjectId
 
-def update(mydb, ObjectId):
+def update(mydb):
     mycol = mydb.usuarios
     execucao = True
     findUsuario.findAll(mydb)

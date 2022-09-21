@@ -28,10 +28,10 @@ def caseUse(mydb):
             case "3":
                 findUsuario.findSort(mydb)
             case "4":
-                findUsuario.findById(mydb,ObjectId)
+                findUsuario.findById(mydb)
             case "5":
-                updateUsuario.update(mydb,ObjectId)
+                updateUsuario.update(mydb)
             case "6":
-                deleteUsuario.deletar(mydb,ObjectId)
+                deleteUsuario.deletar(mydb)
             case "0":
                 return

@@ -1,3 +1,5 @@
+from bson.objectid import ObjectId
+
 def findAll(mydb):
     mycol = mydb.usuarios
     mydoc = mycol.find()
@@ -13,9 +15,9 @@ def findAll(mydb):
         print(f'Data de nascimento: {x["data_nascimento"]}')
         print("\n----------------------------------------\n")
 
-def findById(mydb,ObjectId):
+def findById(mydb):
     findAll(mydb)
-    userId = input(str("\nEscolha o id de um usuario: "))
+    userId = input(str("\nDigite o id do usuario desejado: "))
     mycol = mydb.usuarios
     myquery = {"_id":ObjectId(userId)}
     usuario = mycol.find_one(myquery)

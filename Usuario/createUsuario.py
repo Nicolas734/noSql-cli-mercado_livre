@@ -24,8 +24,8 @@ def cadastrarUsuario(mydb):
         "compras":[]
     }
     x = mycol.insert_one(mydict)
-    print("\nUsuario cadastrado com sucesso")
-    print(f'Id do usuario cadastrado {x.inserted_id}')
+    print("\nUsuario cadastrado com sucesso\n")
+    print(f'Id do usuario cadastrado {x.inserted_id}\n')
 
 
 def cadastrarEndereco():

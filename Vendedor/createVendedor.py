@@ -19,5 +19,5 @@ def cadastrarVendedor(mydb):
     }
     
     x = mycol.insert_one(mydict)
-    print("\nVendedor cadastrado com sucesso")
-    print(f'Id do usuario cadastrado {x.inserted_id}')
+    print("\nVendedor cadastrado com sucesso\n")
+    print(f'Id do usuario cadastrado {x.inserted_id}\n')

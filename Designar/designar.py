@@ -7,9 +7,9 @@ def designar(mydb):
     vend_collection = mydb.vendedores
     
     vendedor = buscarVendedores.findById(mydb)
-    executando = True
+    execucao = True
     
-    while executando:
+    while execucao:
         
         selecionar_produto = input(str(f'deseja cadastrar um produto ao vendedor ? '))
         
@@ -20,7 +20,9 @@ def designar(mydb):
             prod_collection.update_one({"_id":ObjectId(produto_id)},{ "$set": { "vendedor":vendedor }})
             vend_collection.update_one({"_id":ObjectId(vendedor["_id"])},{ "$push": { "produtos":produto }})
         else:
-            executando = False
+            execucao = False
+    
+    print("\nProdutos e vendedores designados com sucesso\n")
     
     for x in prod_collection.find():
         print(x)

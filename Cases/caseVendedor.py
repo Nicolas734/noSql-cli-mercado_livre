@@ -1,6 +1,7 @@
 import Vendedor.createVendedor as cadastrar
 import Vendedor.findVendedor as buscar
 import Vendedor.deleteVendedor as excluir
+import Vendedor.updateVendedor as atualizar
 
 def caseVendedor(mydb):
     
@@ -29,7 +30,7 @@ def caseVendedor(mydb):
             case "4":
                 buscar.findById(mydb)
             case "5":
-                print('futuramente será feito')
+                atualizar.atualizarVendedor(mydb)
             case "6":
                 excluir.deleteVendedor(mydb)
             case "0":

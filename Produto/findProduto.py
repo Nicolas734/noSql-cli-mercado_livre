@@ -17,7 +17,7 @@ def findAll(mydb):
 def findById(mydb):
     mycol = mydb.produtos
     findAll(mydb)
-    id = input(str("\nEscolha o id de um produto: "))
+    id = input(str("\nDigite o id do produto desejado: "))
     produto = mycol.find_one({"_id":ObjectId(id)})
     print(f'\n--  Produto de id {id}  --\n')
     print(f'Nome: {produto["nome"]}')
