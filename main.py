@@ -42,4 +42,4 @@ while execucao:
         case "0":
             execucao = False
             print("\nAté mais \n")
-            break;
+            break

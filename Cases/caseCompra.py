@@ -1,5 +1,6 @@
 import Compra.realizar_pedido as realizar
 import Compra.findCompra as buscar
+import Compra.cancelarCompra as cancelar
 
 def caseCompra(mydb):
     
@@ -7,8 +8,8 @@ def caseCompra(mydb):
     while executando:
         print('''Opções:
         [1] Realizar compra
-        [2] Listar compras de um cliente
-        [3] Listar todas as compras
+        [2] Listar todas as compras
+        [3] Listar compra por id
         [4] Cancelar compra
         [0] Voltar
             ''')
@@ -19,10 +20,10 @@ def caseCompra(mydb):
             case "1":
                 realizar.realizar_compra(mydb)
             case "2":
-                print('')
-            case "3":
                 buscar.findAll(mydb)
+            case "3":
+                buscar.findById(mydb)
             case "4":
-                print("")
+                cancelar.cancelarCompra(mydb)
             case "0":
                 return
