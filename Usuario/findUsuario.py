@@ -68,10 +68,10 @@ def findCompraById(mydb):
         compra_collection = mydb.compras
         usuario = findById(mydb)
         for compra in usuario["compras"]:
-            print(f'Id: {compra["_id"]}  --\n')
+            print(f'\nId da compra: {compra["_id"]}  --\n')
             print(f'Data da compra: {compra["data_compra"]}')
             print(f'Formato do pagamento: {compra["formato_pagamento"]}')
-            print(f'Total da compra: {compra["total"]}')
+            print(f'Total da compra: {compra["total"]}\n')
         compra_id = input(str("Digite o id da compra desejada: "))
         compra = compra_collection.find_one({"_id":ObjectId(compra_id)})
-        return compra
+        return compra,usuario
